@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white " >
+
+    <nav class="fixed top-0 left-0 w-full bg-yellow-500 ">
+        <div class="max-w-screen-xl mx-auto px-4 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <!-- <span class="text-3xl font-bold text-white font-semibold whitespace-nowrap dark:text-white">E-Challan</span> -->
+                <img src="images/logo-3.png" alt="Services" class=" w-36 h-16">
+            </a>
+            <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+            </button>
+            <div class="hidden md:block">
+                <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 md:rounded-lg md:p-4 ">
+                    <li>
+                        <a href="index.html" class="text-lg block py-2 px-3 text-[#F7F7F7] rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-lime-800 dark:text-[#F7F7F7] md:dark:hover:text-lime-800 dark:hover:bg-gray-700 dark:hover:text-[#F7F7F7]">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html" class="text-lg block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-lime-800 dark:text-white md:dark:hover:text-lime-800 dark:hover:bg-gray-700 dark:hover:text-white">About</a>
+                    </li>
+                    <li>
+                        <a href="pay-challan.html" class="text-lg block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-lime-800 dark:text-white md:dark:hover:text-lime-800 dark:hover:bg-gray-700 dark:hover:text-white">Pay-Challan</a>
+                    </li>
+                    <li>
+                        <a href="check-status.html" class="text-lg block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-lime-800 dark:text-white md:dark:hover:text-lime-800 dark:hover:bg-gray-700 dark:hover:text-white">Challan Status </a>
+                    </li>
+                    <li>
+                        <a href="contect.html" class="text-lg block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-lime-800 dark:text-white md:dark:hover:text-lime-800 dark:hover:bg-gray-700 dark:hover:text-white">Contact us</a>
+                    </li>
+                </ul>
+            </div>
+        </div> 
+    </nav>
+    
+    <main class="container mx-auto py-10 px-6 mt-12">
+
+        <section class="bg-yellow-200 p-8 rounded-lg shadow-lg">
+          <h2 class="text-3xl font-bold mb-6 text-lime-800 text-center">Challan Status</h2>
+    
+          <div class="mb-6 flex flex-col gap-4">
+            <form id="search-form" class="flex items-center">
+              <label for="challan-number" class="block font-medium text-lime-800 mr-4">Enter Challan Number:</label>
+              <input type="text" id="challan-number" class="w-full bg-live-500 border  border-gray-300 p-2 rounded" placeholder="e.g. CH1234567890">
+              <button type="submit" class="bg-yellow-500 text-lime-800lime-800 px-4 py-2 rounded hover:bg-yellow-600 transition ml-4">Search</button>
+            </form>
+          </div>
+
+          <table class="w-full">
+            <thead>
+              <tr class="text-left border-b border-white">
+                <th class="px-4 py-2 text-lime-800 ">Challan Number</th>
+                <th class="px-4 py-2 text-lime-800">Vehicle Registration Number</th>
+                <th class="px-4 py-2 text-lime-800">Offense</th>
+                <th class="px-4 py-2 text-lime-800">Fine Amount</th>
+                <th class="px-4 py-2 text-lime-800">Issue Date</th>
+                <th class="px-4 py-2 text-lime-800">Status</th>
+              </tr>
+            </thead>
+            <tbody id="challan-list">
+              <!-- Challan data will be populated dynamically here -->
+            </tbody>
+          </table>
+    
+        </section>
+    
+      </main>
+<!-- <div class="w-full bg-yellow-500 h-10 mt-16 mb-0"></div> -->
+<!-- footer section  -->
+<footer class="bg-yellow-600 text-[#F7F7F7] py-12 mt-8">
+    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div>
+                <h2 class="text-lg font-semibold mb-4">About Us</h2>
+                <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at commodo eros. Integer ut vulputate ante. Aenean eleifend vel velit ut dignissim.</p>
+            </div>
+            <div>
+                <h2 class="text-lg font-semibold mb-4">Quick Links</h2>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-sm hover:text-white">Home</a></li>
+                    <li><a href="#" class="text-sm hover:text-white">About</a></li>
+                    <li><a href="#" class="text-sm hover:text-white">Pay-Challan</a></li>
+                    <li><a href="#" class="text-sm hover:text-white">Challan Status</a></li>
+                    <li><a href="#" class="text-sm hover:text-white">Contact us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="text-lg font-semibold mb-4">Contact Us</h2>
+                <p class="text-sm">123 Street Name, City, Country<br>info@example.com<br>+123-456-7890</p>
+            </div>
+            <div>
+                <h2 class="text-lg font-semibold mb-4">Follow Us</h2>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-300 hover:text-white" aria-label="Facebook">
+                        <i class="fa-brands fa-square-facebook"></i>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-white" aria-label="Twitter">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-white" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-8 text-sm text-white text-center">© 2024 E-Challan. All rights reserved.</div>
+    </div>
+</footer>
+
+</body>
+</html>
